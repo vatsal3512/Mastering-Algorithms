@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int solverec(int n,int k){
+    if(n==0) return 1;
+    int ans=0;
+    for(int i=1;i<=k;i++){
+        if(n-i>=0){
+            int subans=solverec(n-i,k);
+            ans=ans+subans;
+        }
+    }
+    return  ans;
+}
+int main(){
+    int n,k;
+    cin>>n>>k;
+    cout<<solverec(n,k)<<endl;
+}
